@@ -13,8 +13,7 @@ end
 % Get a list of all files in the folder with the desired file name pattern.
 filePattern = fullfile(myFolder, '*.wav'); % Change to whatever pattern you need.
 LS = dir(filePattern);
-STM=zeros(length(LS),35);
-MTM=zeros(length(LS),35);
+
 for k = 1 : length(LS);
   baseFileName = LS(k).name;
 LungSounds = fullfile(myFolder, baseFileName);
