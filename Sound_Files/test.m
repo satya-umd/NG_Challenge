@@ -19,20 +19,8 @@ for k = 1 : length(LS);
   baseFileName = LS(k).name;
 LungSounds = fullfile(myFolder, baseFileName);
 fprintf(1, 'Now reading %s\n', LungSounds) 
-  %This can be utsed to list directed files being processed
-% The files are read in via 'audioread', listing the Sampled Data and Sampling Rate
+
 [X, Fs] = audioread(LungSounds);
-  stf=stFeatureExtraction(X,12000,9,9);
-  STM(k,:)=stf';
-    listOfStatistics={'mean','max','min','median','std','stdbymean'}; %Arithmetic mean
-%         'kurtosis','geomean','harmean','skewness'}; 
-    mtf=mtFeatureExtraction(stf,9,9,listOfStatistics(6)); 
-MTM(k,:)=mtf';
-%   M=[];
-% %   ALL={STM;MTM};
-% ALL = {stm;mtm};
-%   for k=1:length(LS);
-%       M=[M; ALL];
-%   end
-%   M %Clusters all extracted data into a cell
+
+
 end
